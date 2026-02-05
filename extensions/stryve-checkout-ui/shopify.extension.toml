@@ -1,0 +1,19 @@
+# Stryve Payment Gateway — Checkout UI Extension
+# Appears as a payment option in checkout
+# Integrates with Stryve SME Checkout via App Proxy
+# API flow: Authenticate → Create Order → Redirect to Stryve → Callback
+
+api_version = "2025-04"
+
+[[extensions]]
+uid = "a185d9ab-11af-a364-ed52-6b9fbfe3293811839add"
+type = "ui_extension"
+name = "Stryve Payment Gateway"
+handle = "stryve-checkout-ui"
+
+  [extensions.capabilities]
+  network_access = true
+
+  [[extensions.targeting]]
+  target = "purchase.checkout.payment-method-list.render-after"
+  module = "./src/Checkout.jsx"

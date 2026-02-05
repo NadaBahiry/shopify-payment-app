@@ -1,0 +1,15 @@
+{
+  "name": "stryve-checkout-ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shopify checkout UI for Stryve payment gateway",
+  "scripts": {
+    "build": "echo 'built'"
+  },
+  "dependencies": {
+    "@shopify/ui-extensions-react": "^2025.4.0",
+    "@shopify/ui-extensions": "^2025.4.0",
+    "react": "^18.3.1",
+    "react-reconciler": "^0.29.0"
+  }
+}

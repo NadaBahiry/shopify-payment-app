@@ -1,0 +1,14 @@
+{
+    "name": "stryve/shopify-payment-app",
+    "description": "Stryve as a Shopify Payment App (PHP backend)",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    }
+}

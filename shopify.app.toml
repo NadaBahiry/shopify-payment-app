@@ -1,0 +1,34 @@
+# Stryve Payment Gateway - Shopify App
+# Uses Checkout UI Extension + App Proxy (no Payments Platform approval required)
+#
+# App: ea36fbdab7046cf13c3402f1e00e9ce0 (Stryve Payments Gateway Ver2)
+# Dev store: stryve-app-dev-store.myshopify.com
+# Auth redirect must be /auth/callback (not /api/auth)
+
+client_id = "ea36fbdab7046cf13c3402f1e00e9ce0"
+name = "Stryve Payments Gateway Ver2"
+application_url = "http://127.0.0.1:8000"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+include_config_on_deploy = true
+
+[webhooks]
+api_version = "2026-04"
+
+  [[webhooks.subscriptions]]
+  topics = ["app/uninstalled"]
+  uri = "/webhooks"
+
+[access_scopes]
+scopes = "read_orders,write_orders,write_products"
+
+[auth]
+redirect_urls = ["http://127.0.0.1:8000/auth/callback"]
+
+[app_proxy]
+# Path relative to application_url (must be HTTPS or path for CLI validation)
+url = "/api"
+subpath = "stryve"
+prefix = "apps"
