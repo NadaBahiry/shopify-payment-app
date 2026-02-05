@@ -1,1 +1,0 @@
-# shopify-payment-app
